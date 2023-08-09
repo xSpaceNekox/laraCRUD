@@ -15,4 +15,5 @@ class Skill extends Model
     {
         return $this->hasMany(Project::class);
     }
+
 }
