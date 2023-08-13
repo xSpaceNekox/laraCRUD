@@ -1,11 +1,10 @@
 <script setup>
-import Checkbox from '@/Components/Checkbox.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import { Head, useForm } from '@inertiajs/vue3';
 
 const form = useForm({
     name: '',
@@ -14,10 +13,11 @@ const form = useForm({
 
 const submit = () => {
     form.post(route('skills.store'), {
-     
+
     });
 };
 </script>
+
 
 
 
@@ -33,26 +33,15 @@ const submit = () => {
                 <form class="p-4" @submit.prevent="submit">
                     <div>
                         <InputLabel for="name" value="Name" />
-                        <TextInput
-                            id="name"
-                            type="text"
-                            class="mt-1 block w-full"
-                            v-model="form.name"
-                            required
-                            autofocus
-                            autocomplete="name"
-                        />
+                        <TextInput id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus
+                            autocomplete="name" />
                         <InputError class="mt-2" :message="form.errors.name" />
                     </div>
                     <div class="mt-2"></div>
                     <div>
                         <InputLabel for="image" value="Image" />
-                        <TextInput
-                            id="image"
-                            type="file"
-                            class="mt-1 block w-full"
-                            @input="form.image = $event.target.files[0]"
-                        />
+                        <TextInput id="image" type="file" class="mt-1 block w-full"
+                            @input="form.image = $event.target.files[0]" />
                         <InputError class="mt-2" :message="form.errors.image" />
                     </div>
 

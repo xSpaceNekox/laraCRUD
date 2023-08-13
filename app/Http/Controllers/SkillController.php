@@ -32,25 +32,20 @@ class SkillController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => ['required', 'min:3'],
-            'image' => ['required', 'image'],
+   public function store(Request $request)
+{
+    $validatedData = $this->validateData($request);
 
-        ]);
+    $imagePath = $validatedData['image']->store('skills');
 
-        if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('skills');
-            Skill::create([
-                'name' => $request->name,
-                'image' => $image
-            ]);
+    Skill::create([
+        'name' => $validatedData['name'],
+        'image' => $imagePath,
+    ]);
 
-            return Redirect::route('skills.index')->with('message', 'Skill created successfully.');
-        }
-        return Redirect::back();
-    }
+    return redirect()->route('skills.index')->with('message', 'Skill created successfully.');
+}
+
 
     /**
      * Show the form for editing the specified resource.
@@ -63,24 +58,24 @@ class SkillController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Skill $skill)
-    {
-        $image = $skill->image;
-        $request->validate([
-            'name' => ['required', 'min:3']
-        ]);
-        if ($request->hasFile('image')) {
-            Storage::delete($skill->image);
-            $image = $request->file('image')->store('skills');
-        }
+   public function update(Request $request, Skill $skill)
+{
+    $validatedData = $this->validateData($request, true);
 
-        $skill->update([
-            'name' => $request->name,
-            'image' => $image,
-        ]);
+    $imagePath = $skill->image;
 
-        return Redirect::route('skills.index')->with('message', 'Skill updated successfully.');
+    if ($request->hasFile('image')) {
+        Storage::delete($skill->image);
+        $imagePath = $request->file('image')->store('skills');
     }
+
+    $skill->update([
+        'name' => $validatedData['name'],
+        'image' => $imagePath,
+    ]);
+
+    return redirect()->route('skills.index')->with('message', 'Skill updated successfully.');
+}
 
     /**
      * Remove the specified resource from storage.
@@ -90,6 +85,18 @@ class SkillController extends Controller
         Storage::delete($skill->image);
         $skill->delete();
 
-        return Redirect::back()->with('message', 'Skill deleted.');
+         return redirect()->route('skills.index')->with('message', 'Skill Deleted.');
+    }
+
+    public function validateData(Request $request, $update = false) {
+        $rules = [
+            'name' => ['required', 'min:3'],
+        ];
+
+        if (!$update) {
+            $rules['image'] = ['required', 'image'];
+        }
+
+        return $request->validate($rules);
     }
 }

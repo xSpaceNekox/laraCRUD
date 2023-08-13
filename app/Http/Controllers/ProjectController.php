@@ -35,26 +35,20 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => ['required', 'min:3'],
-            'image' => ['required', 'image'],
-            'skill_id' => ['required'],
+        $validatedData = $this->validateData($request);
 
+        $imagePath = $validatedData['image']->store('projects');
+        
+        Project::create([
+            'name' => $validatedData['name'],
+            'image' => $imagePath,
+            'skill_id' => $validatedData['skill_id'],
+            'project_url' => $validatedData['project_url'],
         ]);
 
-        if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('projects');
-            Project::create([
-                'skill_id' => $request->skill_id,
-                'name' => $request->name,
-                'image' => $image,
-                'project_url' => $request->project_url,
-            ]);
-
-            return Redirect::route('projects.index')->with('message', 'Project created successfully.');
-        }
-        return Redirect::back();
+           return redirect()->route('projects.index')->with('message', 'Project created successfully.');
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -70,23 +64,22 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        $image = $project->image;
-        $request->validate([
-            'name' => ['required', 'min:3'],
-            'skill_id' => ['required'],
-        ]);
-        if ($request->hasFile('image')) {
-            Storage::delete($project->image);
-            $image = $request->file('image')->store('projects');
-        }
+        $validatedData = $this->validateData($request, true);
 
-        $project->update([
-            'name' => $request->name,
-            'skill_id' => $request->skill_id,
-            'project_url' => $request->project_url,
-            'image' => $image,
-        ]);
-        return Redirect::route('projects.index')->with('message', 'Project updated successfully.');
+        $imagePath = $project->image;
+
+        if ($request->hasFile('image')) {
+        Storage::delete($project->image);
+        $imagePath = $request->file('image')->store('projects');
+    }
+    $project->update([
+        'name' => $validatedData['name'],
+        'image' => $imagePath,
+        'skill_id' => $validatedData['skill_id'],
+        'project_url' => $validatedData['project_url'],
+    ]); 
+
+     return redirect()->route('projects.index')->with('message', 'Project updated successfully.');
     }
 
     /**
@@ -97,6 +90,20 @@ class ProjectController extends Controller
         Storage::delete($project->image);
         $project->delete();
 
-        return Redirect::back()->with('message', 'Project deleted.');
+       return redirect()->route('projects.index')->with('message', 'Project Deleted.');
+    }
+
+    public function validateData(Request $request, $update = false) {
+        $rules = [
+            'name' => ['required', 'min:3'],
+            'skill_id' => ['required'],
+            'project_url' => ['required'],
+        ];
+
+        if (!$update) {
+            $rules['image'] = ['required', 'image'];
+        }
+
+        return $request->validate($rules);
     }
 }
