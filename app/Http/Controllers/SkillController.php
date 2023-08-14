@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Resources\SkillResource;
 use App\Models\Skill;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
@@ -15,10 +13,12 @@ class SkillController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $skills = SkillResource::collection(Skill::all());
-        return Inertia::render('Skills/Index', compact('skills'));
+       return Inertia::render('Skills/Index', [
+        'skills' => SkillResource::collection(Skill::where('name', 'LIKE', '%'.$request->search.'%')->get()),
+        'searchInput' => $request->search, // Pass the search input to the frontend
+    ]);
     }
 
     /**

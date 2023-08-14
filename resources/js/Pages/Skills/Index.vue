@@ -1,10 +1,21 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, useForm } from '@inertiajs/vue3';
+import TextInput from '@/Components/TextInput.vue';
 
 defineProps({
     skills: Object,
-})
+});
+
+const form = useForm({
+    search: '',
+});
+
+const searchItem = async () => {
+    await form.get(route('skills.index', { search: form.search }));
+};
+
+
 </script>
 
 <template>
@@ -16,14 +27,30 @@ defineProps({
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-end m-2 p-2">
+                <div class="flex justify-start">
                     <Link :href="route('skills.create')"
                         class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 text-white rounded-md">New Skill</Link>
+                </div>
+
+                <div class="flex mt-3 justify-between items-center">
+
+                    <div class="flex-grow">
+                        <TextInput id="search" type="text" class="block w-full" v-model="form.search"
+                            :placeholder="searchInput ? 'Search: ' + searchInput : 'Search'" />
+                    </div>
+                    <button type="button" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 text-white rounded-md ml-2"
+                        @click="searchItem">
+                        Search
+                    </button>
+
+                </div>
+
+                <div class="mt-2">
                 </div>
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left text-gray-500">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                            <tr>
+                            <tr v-for="skill in skills" :key="skill.id" class="bg-white border-b">
                                 <th scope="col" class="px-6 py-3">
                                     ID
                                 </th>
