@@ -1,15 +1,11 @@
 <script setup>
-
 </script>
 
 <template>
     <footer class="bg-light-secondary py-12">
         <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row space-y-6 lg:space-y-0 items-center justify-between">
-                <div class="flex space-x-6 items-center justify-center">
-                    <img class="h-8 w-auto" src="http://127.0.0.1:8000/Image/Mascot.png" alt="LOGO" />
-                </div>
-                <p class="text-paragraph opacity-80 text-[15px]">
+            <div class="items-center justify-between">
+                <p class="text-paragraph opacity-80 text-[15px] text-right">
                     &copy; 2023 LaraCRUD.UNIDEV All right reserved.
                 </p>
             </div>

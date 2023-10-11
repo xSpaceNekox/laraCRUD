@@ -1,18 +1,10 @@
 <script setup>
 
 </script>
-<style>
-.image-size {
-    width: 50px;
-    /* Adjust this to your preferred width */
-    height: 50px;
-    /* Adjust this to your preferred height */
-}
-</style>
 <template>
-    <section id="home" class="lg:h-[85vh] flex items-center bg-light-primary py-32 lg:py-0 overflow-hidden">
+    <section id="home" class="lg:h-[80vh] flex items-center bg-light-primary py-32 lg:py-0 overflow-hidden">
         <div class="container mx-auto h-full">
-            <div class="flex flex-col md:flex-row items-center h-full pt-8">
+            <div class="flex flex-col md:flex-row items-center h-full pt-10">
                 <div class="flex-1 flex flex-col items-center lg:items-start">
                     <p class="text-lg text-accent text-md mb-[22px]">Hey, I'm James! :></p>
                     <h1
@@ -27,8 +19,8 @@
                         Work with me :>
                     </button>
                 </div>
-                <div class="hidden lg:flex flex-1 justify-end items-center h-full mt-8 md:mt-0">
-                    <img clas="image-size" src="http://127.0.0.1:8000/Image/Hero.avif" alt="Hero Image" />
+                <div class="hidden lg:flex flex-1 justify-end items-center">
+                    <img class="rounded-lg" src="http://127.0.0.1:8000/Image/Hero.jpg" alt="Hero Image" width="650" />
                 </div>
             </div>
         </div>

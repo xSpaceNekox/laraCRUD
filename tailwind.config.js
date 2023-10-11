@@ -27,6 +27,10 @@ module.exports = {
                 "light-secondary": "#FDFAF6",
                 "light-tail-100": "#A9DED2",
                 "light-tail-500": "#54BAB9",
+                "dark-primary": "#050402",
+                "dark-secondary": "#1C1D24",
+                "dark-navy-100": "#07567D",
+                "dark-navy-500": "#292D42",
                 accent: {
                     DEFAULT: "#ac6b34",
                     hover: "#925a2b",

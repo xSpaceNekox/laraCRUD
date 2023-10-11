@@ -17,7 +17,7 @@ class SkillController extends Controller
     {
        return Inertia::render('Skills/Index', [
         'skills' => SkillResource::collection(Skill::where('name', 'LIKE', '%'.$request->search.'%')->get()),
-        'searchInput' => $request->search, // Pass the search input to the frontend
+        'searchInput' => $request->search,
     ]);
     }
 
