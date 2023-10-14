@@ -4,10 +4,12 @@ import Hero from '@/Components/Frontend/Hero.vue';
 import Promote from '@/Components/Frontend/Promote.vue';
 import About from '@/Components/Frontend/About.vue';
 import Skills from '@/Components/Frontend/Skills.vue';
+import Portfolio from '@/Components/Frontend/Portfolio.vue';
 import { Head, Link } from '@inertiajs/vue3';
 
 defineProps({
     skills: Object,
+    projects: Object,
 });
 </script>
 
@@ -23,6 +25,7 @@ defineProps({
         <!-- Skills tail-100 -->
         <Skills :skills="skills" />
         <!-- Portfolio primary -->
+        <Portfolio :skills="skills" :projects="projects" />
         <!-- Services secondary-->
         <!-- Contact primary -->
     </FrontendLayout>
