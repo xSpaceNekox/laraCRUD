@@ -28,13 +28,13 @@ const filterProjects = (id) => {
         <nav class="mb-12 border-b-2 border-light-tail-100">
             <ul class="flex flex-col lg:flex-row justify-evenly items-center">
                 <li class="cursor-pointer capitalize m-4">
-                    <button @click="filterProjects('all')" class="flex text-center px-4 py-2 hover:text-light-tail-500"
-                        :class="[selectedSkill === 'all' ? 'text-light-tail-500' : '',]">All</button>
+                    <button @click="filterProjects('all')" class="flex text-center px-4 py-2 hover:text-purple-600"
+                        :class="[selectedSkill === 'all' ? 'text-purple-600 text-xl font-extrabold ' : '',]">All</button>
                 </li>
                 <li class="cursor-pointer capitalize m-4" v-for="projectSkill in skills.data" :key="projectSkill.id">
                     <button @click="filterProjects(projectSkill.id)"
-                        class="flex text-center px-4 py-2 hover:text-light-tail-500"
-                        :class="[selectedSkill === projectSkill.id ? 'text-light-tail-500' : '',]">
+                        class="flex text-center px-4 py-2 hover:text-purple-600"
+                        :class="[selectedSkill === projectSkill.id ? 'text-purple-600 text-xl font-extrabold ' : '',]">
                         {{ projectSkill.name }}</button>
                 </li>
             </ul>

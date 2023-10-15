@@ -16,7 +16,7 @@
                     </p>
                     <button
                         class="btn btn-md bg-accent hover:bg-light-secondary md:btn-lg transition-all text-white hover:text-light-tail-500">
-                        Work with me :>
+                        Work with me
                     </button>
                 </div>
                 <div class="hidden lg:flex flex-1 justify-end items-center">
