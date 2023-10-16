@@ -2,7 +2,7 @@
     <section id="about" class="section bg-light-secondary">
         <div class="container mx-auto">
             <div class="flex flex-col xl:flex-row gap-24">
-                <img class="object-cover h-full w-[566px] md:mx-auto lg:mx-0 rounded-2xl"
+                <img class="object-cover h-full w-[566px] md:mx-auto lg:mx-0 rounded-2xl rotate-image"
                     src="http://127.0.0.1:8000/Image/About.jpg" alt="about" />
                 <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
                     <div class="flex flex-col">

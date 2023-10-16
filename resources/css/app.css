@@ -41,4 +41,17 @@
     .active {
         @apply text-accent;
     }
+    /* Rotate the image on smaller screens */
+    @media (max-width: 767px) {
+        .rotate-image {
+            transform: rotate(90deg);
+        }
+    }
+
+    /* Reset the rotation on larger screens */
+    @media (min-width: 768px) {
+        .rotate-image {
+            transform: none; /* Reset the rotation */
+        }
+    }
 }
