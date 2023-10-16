@@ -30,8 +30,8 @@ const submit = () => {
 </script>
 
 <template>
-    <section class="section bg-light-primary">
-        <div class="container mx-auto">
+    <section id="contact" class="section bg-light-primary">
+        <div class="container mx-auto" v-motion-slide-visible-top>
             <div class="flex flex-col items-center text-center">
                 <h2 class="section-title">Contact Me</h2>
                 <p class="subtitle">

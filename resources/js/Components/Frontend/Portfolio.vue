@@ -7,8 +7,8 @@ defineProps({
 </script>
 
 <template>
-    <section id="protfolio" class="section bg-light-primary min-h[1400px]">
-        <div class="container mx-auto">
+    <section id="portfolio" class="section bg-light-primary min-h[1400px]">
+        <div class="container mx-auto" v-motion-slide-visible-top>
             <div class="flex flex-col items-center text-center">
                 <h2 class="section-title">My latest work</h2>
                 <p class="subtitle">

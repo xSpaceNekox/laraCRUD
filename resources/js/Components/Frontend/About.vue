@@ -1,6 +1,6 @@
 <template>
     <section id="about" class="section bg-light-secondary">
-        <div class="container mx-auto">
+        <div class="container mx-auto" v-motion-slide-visible-top>
             <div class="flex flex-col xl:flex-row gap-24">
                 <img class="object-cover h-full w-[566px] md:mx-auto lg:mx-0 rounded-2xl rotate-image"
                     src="http://127.0.0.1:8000/Image/About.jpg" alt="about" />
