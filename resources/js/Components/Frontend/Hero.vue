@@ -24,21 +24,21 @@
                         <div class="flex items-center mb-6">
                             <a class="w-12 h-12 rounded-full flex items-center justify-center hover:bg-purple-200 hover:border-purple-200 mr-3 sm:mr-4"
                                 href="https://www.facebook.com/Spaceneko2">
-                                <img src="http://127.0.0.1:8000/Image/FbIcon.png" alt="FbIcon" />
+                                <img src="/Image/FbIcon.png" alt="FbIcon" />
                             </a>
                             <a class="w-12 h-12 rounded-full flex items-center justify-center hover:bg-purple-200 hover:border-purple-200 mr-3 sm:mr-4"
                                 href="https://www.linkedin.com/in/james-anthony-vecina-a08a99287/">
-                                <img src="http://127.0.0.1:8000/Image/LinkedIcon.png" alt="linkedIcon" />
+                                <img src="/Image/LinkedIcon.png" alt="linkedIcon" />
                             </a>
                             <a class="w-12 h-12 rounded-full flex items-center justify-center hover:bg-purple-200 hover:border-purple-200 mr-3 sm:mr-4"
                                 href="https://github.com/xSpaceNekox">
-                                <img src="http://127.0.0.1:8000/Image/GitIcon.png" alt="GitIcon" />
+                                <img src="/Image/GitIcon.png" alt="GitIcon" />
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="hidden lg:flex flex-1 justify-end items-center">
-                    <img class="rounded-lg" src="http://127.0.0.1:8000/Image/Hero.jpg" alt="Hero Image" width="650" />
+                    <img class="rounded-lg" src="/Image/Hero.jpg" alt="Hero Image" width="650" />
                 </div>
             </div>
         </div>

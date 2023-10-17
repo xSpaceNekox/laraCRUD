@@ -15,7 +15,7 @@
             <div class="grid lg:grid-cols-3 gap-8">
                 <div class="bg-light-tail-100 p-16 rounded-2xl">
                     <div class="mb-24">
-                        <img src="http://127.0.0.1:8000/Image/WebIcon.png" alt="WebIcon" />
+                        <img src="/Image/WebIcon.png" alt="WebIcon" />
                     </div>
                     <h4 class="text-xl font-medium mb-2">Web Design</h4>
                     <p>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="bg-light-tail-100 p-16 rounded-2xl">
                     <div class="mb-24">
-                        <img src="http://127.0.0.1:8000/Image/WebDev2.png" alt="WebDev2" />
+                        <img src="/Image/WebDev2.png" alt="WebDev2" />
                     </div>
                     <h4 class="text-xl font-medium mb-2">Web Development</h4>
                     <p>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="bg-light-tail-100 p-16 rounded-2xl">
                     <div class="mb-24">
-                        <img src="http://127.0.0.1:8000/Image/GraphicsDesign.png" alt="GraphicsDesign" />
+                        <img src="/Image/GraphicsDesign.png" alt="GraphicsDesign" />
                     </div>
                     <h4 class="text-xl font-medium mb-2">Graphic Design</h4>
                     <p>

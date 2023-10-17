@@ -26,7 +26,7 @@ onMounted(() => {
         :class="{ 'bg-light-primary': scrollBg, 'bg-white': !scrollBg }">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a class="flex items-center">
-                <img src="http://127.0.0.1:8000/Image/Mascot.png" class="h-8 mr-3" alt="LOGO" />
+                <img src="/Image/Mascot.png" class="h-8 mr-3" alt="LOGO" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap">James Portfolio</span>
             </a>
             <button @click="showMobileMenu = !showMobileMenu" data-collapse-toggle="navbar-default" type="button"
