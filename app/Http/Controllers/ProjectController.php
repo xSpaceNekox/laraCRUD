@@ -38,7 +38,7 @@ class ProjectController extends Controller
         $validatedData = $this->validateData($request);
 
         $imagePath = $validatedData['image']->store('projects');
-        
+
         Project::create([
             'name' => $validatedData['name'],
             'image' => $imagePath,
@@ -64,22 +64,25 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        $validatedData = $this->validateData($request, true);
+    $validatedData = $this->validateData($request, true);
 
-        $imagePath = $project->image;
+    $imagePath = $project->image;
 
-        if ($request->hasFile('image')) {
+    if ($request->hasFile('image')) {
         Storage::delete($project->image);
         $imagePath = $request->file('image')->store('projects');
     }
+
     $project->update([
         'name' => $validatedData['name'],
         'image' => $imagePath,
-        'skill_id' => $validatedData['skill_id'],
         'project_url' => $validatedData['project_url'],
-    ]); 
+    ]);
 
-     return redirect()->route('projects.index')->with('message', 'Project updated successfully.');
+    // Sync the skills - this will update the associated skills
+    $project->skills()->sync($validatedData['skill_id']);
+
+    return redirect()->route('projects.index')->with('message', 'Project updated successfully.');
     }
 
     /**
@@ -96,7 +99,7 @@ class ProjectController extends Controller
     public function validateData(Request $request, $update = false) {
         $rules = [
             'name' => ['required', 'min:3'],
-            'skill_id' => ['required'],
+            'skill_id' => ['required', 'array'], // Skill IDs should be an array
             'project_url' => ['required'],
         ];
 

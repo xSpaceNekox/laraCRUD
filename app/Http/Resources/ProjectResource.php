@@ -18,7 +18,7 @@ class ProjectResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'image' => Storage::url($this->image),
+            'image' => 'storage/' . $this->image,
             'skill' => new SkillResource($this->whenLoaded('skill')),
             'project_url' => $this->project_url,
 

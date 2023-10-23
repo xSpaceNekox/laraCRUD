@@ -18,7 +18,7 @@ class SkillResource extends JsonResource
        return[
         'id' => $this->id,
         'name' => $this->name,
-        'image' => Storage::url($this->image),
+        'image' => 'storage/' . $this->image,
        ];
     }
 }

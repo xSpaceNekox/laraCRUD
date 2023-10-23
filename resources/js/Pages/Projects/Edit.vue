@@ -1,15 +1,15 @@
 <script setup>
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link, useForm, router } from '@inertiajs/vue3';
+import InputError from "@/Components/InputError.vue";
+import InputLabel from "@/Components/InputLabel.vue";
+import PrimaryButton from "@/Components/PrimaryButton.vue";
+import TextInput from "@/Components/TextInput.vue";
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
+import { Head, Link, useForm, router } from "@inertiajs/vue3";
 
 const props = defineProps({
     skills: Array,
     project: Object,
-})
+});
 const form = useForm({
     name: props.project?.name,
     image: null,
@@ -72,13 +72,10 @@ const submit = () => {
                     </div>
 
                     <div class="flex items-center justify-end mt-4">
-                        <PrimaryButton class="ml-4">
-                            Update
-                        </PrimaryButton>
+                        <PrimaryButton class="ml-4"> Update </PrimaryButton>
                     </div>
                 </form>
             </div>
         </div>
     </AuthenticatedLayout>
 </template>
-

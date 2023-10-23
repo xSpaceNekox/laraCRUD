@@ -1,25 +1,24 @@
 <script setup>
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import InputError from "@/Components/InputError.vue";
+import InputLabel from "@/Components/InputLabel.vue";
+import PrimaryButton from "@/Components/PrimaryButton.vue";
+import TextInput from "@/Components/TextInput.vue";
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
+import { Head, Link, useForm } from "@inertiajs/vue3";
 
 defineProps({
-    skills: Array
-})
+    skills: Array,
+});
+
 const form = useForm({
-    name: '',
+    name: "",
     image: null,
-    skill_id: '',
-    project_url: '',
+    skill_id: "",
+    project_url: "",
 });
 
 const submit = () => {
-    form.post(route('projects.store'), {
-
-    });
+    form.post(route("projects.store"), {});
 };
 </script>
 <template>
@@ -34,9 +33,9 @@ const submit = () => {
                 <form class="p-4" @submit.prevent="submit">
                     <div>
                         <InputLabel for="skill_id" value="Skill" />
-                        <select
+                        <select multiple
                             class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                            v-model="form.skill_id" id="skill_id" name="skill_id">
+                            v-model="selectedSkills" id="skill_id" name="skill_id[]">
                             <option v-for="skill in skills" :key="skill.id" :value="skill.id">
                                 {{ skill.name }}
                             </option>
@@ -75,4 +74,3 @@ const submit = () => {
         </div>
     </AuthenticatedLayout>
 </template>
-

@@ -1,7 +1,8 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from "vue";
+import { Link } from "@inertiajs/vue3";
 const showMobileMenu = ref("false");
-const scrollBg = ref(false)
+const scrollBg = ref(false);
 
 const navigations = [
     { name: "Home", href: "#home" },
@@ -13,22 +14,24 @@ const navigations = [
 
 const setScrollBg = (value) => {
     scrollBg.value = value;
-}
+};
 onMounted(() => {
     window.addEventListener("scroll", () => {
         return window.scrollY > 50 ? setScrollBg(true) : setScrollBg(false);
-    })
-})
+    });
+});
 </script>
 
 <template>
     <nav class="w-full fixed z-20 border-gray-200 px-2 sm:px-4 py-2.5 rounded"
         :class="{ 'bg-light-primary': scrollBg, 'bg-white': !scrollBg }">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <Link :href="route('login')">
             <a class="flex items-center">
-                <img src="/Image/Mascot.png" class="h-8 mr-3" alt="LOGO" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap">James Portfolio</span>
+                <img src="/Image/Logo.png" class="h-12 max-w-x mr-4" alt="LOGO" />
+                <span class="self-center text-xl font-semibold whitespace-nowrap">James Portfolio</span>
             </a>
+            </Link>
             <button @click="showMobileMenu = !showMobileMenu" data-collapse-toggle="navbar-default" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
                 aria-controls="navbar-default" aria-expanded="false">
@@ -40,7 +43,7 @@ onMounted(() => {
             </button>
             <div class="w-full md:flex md:w-auto" :class="{ hidden: showMobileMenu }" id="navbar-default">
                 <ul
-                    class="flex flex-col p-3 mt-4 rounded-lg border border-purple-200  md:flex-row md:space-x-8 md:mt-0 md:font-medium md:border-0 md:text-center">
+                    class="flex flex-col p-3 mt-4 rounded-lg border border-purple-200 md:flex-row md:space-x-8 md:mt-0 md:font-medium md:border-0 md:text-center">
                     <li v-for="(navigation, index) in navigations" :key="index">
                         <a :href="navigation.href" class="block py-2 pl-3 pr-4 hover:text-purple-600 hover:font-extrabold"
                             aria-current="page">{{ navigation.name }}</a>
