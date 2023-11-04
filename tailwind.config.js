@@ -12,6 +12,7 @@ module.exports = {
 
     theme: {
         fontFamily: {
+            custom: ["ShadowsIntoLight", "cursive"],
             primary: "Montserrat",
             body: "work Sans",
         },
@@ -23,16 +24,16 @@ module.exports = {
         },
         extend: {
             colors: {
-                "light-primary": "#FAF1E6",
+                "light-primary": "#5f22d9",
                 "light-secondary": "#FDFAF6",
                 "light-tail-100": "#A9DED2",
                 "light-tail-500": "#54BAB9",
-                "dark-primary": "#050402",
+                "dark-primary": "#51d6ca",
                 "dark-secondary": "#1C1D24",
                 "dark-navy-100": "#07567D",
                 "dark-navy-500": "#292D42",
                 accent: {
-                    DEFAULT: "#ac6b34",
+                    DEFAULT: "#e4e4e4",
                     hover: "#925a2b",
                 },
                 paragraph: "#878e99",
