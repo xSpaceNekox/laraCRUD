@@ -2,8 +2,8 @@
     <section id="about" class="section bg-light-secondary">
         <div class="container mx-auto" v-motion-slide-visible-top>
             <div class="flex flex-col xl:flex-row gap-24">
-                <img class="object-cover h-full w-[566px] md:mx-auto lg:mx-0 rounded-2xl rotate-image"
-                    src="/Image/About.jpg" alt="about" />
+                <img class="object-cover h-full w-[450px] md:mx-auto lg:mx-0 rounded-xl" src="/Image/About.jpg"
+                    alt="about" />
                 <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
                     <div class="flex flex-col">
                         <h2 class="text-3xl lg:text-4xl font-medium lg:font-extrabold mb-3">
@@ -12,18 +12,24 @@
                         <P class="mb-4 text-accent lg:font-semibold">Freelance Fullstack Web Developer</P>
                         <hr class="mb-8 opacity-90" />
                         <p class="mb-8">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero reprehenderit fugiat sapiente
-                            ad suscipit nisi. Suscipit, error. Aspernatur distinctio placeat rerum ipsum delectus aliquam
-                            porro aperiam amet, maxime explicabo totam?. <br />
+                            Hello, I'm James Anthony C. Vecina, a recent graduate from the University of
+                            Mindanao with a Bachelor of Science in Information Technology (BSIT). With a
+                            strong passion for web development, I'm currently dedicated to honing my
+                            skills in Laravel and VueJS. I'm a hardworking and creative individual who
+                            thrives in collaborative environments, consistently bringing innovative
+                            solutions to the table. My enthusiasm for learning fuels my drive to
+                            continuously improve and explore new horizons in web development.
                             <br />
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores molestiae aperiam iusto minus
-                            consectetur. Distinctio sapiente ducimus consectetur, pariatur quaerat vitae nam corrupti ipsum
-                            sunt inventore commodi tempore ipsam omnis.
+                            <br />
+                            I'm excited about the endless possibilities in this field and am eager to
+                            contribute my skills and dedication to meaningful projects. I firmly believe
+                            that the power of collaboration can lead to outstanding results, and I'm
+                            always open to new opportunities that challenge and inspire. So, let's
+                            connect, create, and innovate together to build the web solutions of
+                            tomorrow.
                         </p>
                     </div>
-                    <a href="#contact" class="btn btn-md bg-accent text-white">
-                        Contact me
-                    </a>
+                    <a href="#contact" class="btn btn-md bg-accent text-white"> Contact me </a>
                 </div>
             </div>
         </div>
