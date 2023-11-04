@@ -19,7 +19,7 @@
                 <div class="flex-1 flex flex-col items-center lg:items-start">
                     <p class="text-lg text-accent text-md mb-[30px]">Hey, I'm James! 👋</p>
                     <h1
-                        class="font-custom text-4xl text-accent leading-[45px] md:test-5xl md:leading-tight lg:text-7xl lg:leading-[1.0] md:tracking-[2px]">
+                        class="font-custom text-4xl text-accent leading-[45px] md:test-5xl md:leading-tight lg:text-7xl lg:leading-[1.0] md:tracking-[7px]">
                         I BUILD & DESIGN <br />
                         WEB INTERFACES.
                     </h1>
