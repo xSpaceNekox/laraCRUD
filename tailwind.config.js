@@ -25,13 +25,14 @@ module.exports = {
         extend: {
             colors: {
                 "light-primary": "#5f22d9",
-                "light-secondary": "#FDFAF6",
+                "light-secondary": "#e4e4e4",
                 "light-tail-100": "#A9DED2",
                 "light-tail-500": "#54BAB9",
                 "dark-primary": "#51d6ca",
                 "dark-secondary": "#1C1D24",
                 "dark-navy-100": "#07567D",
                 "dark-navy-500": "#292D42",
+
                 accent: {
                     DEFAULT: "#e4e4e4",
                     hover: "#925a2b",

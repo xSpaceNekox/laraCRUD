@@ -9,9 +9,9 @@
                         <h2 class="text-3xl lg:text-4xl font-medium lg:font-extrabold mb-3">
                             About Me
                         </h2>
-                        <P class="mb-4 text-accent lg:font-semibold">Freelance Fullstack Web Developer</P>
+                        <P class="mb-4 text-light-tail-500 lg:font-semibold">Freelance Fullstack Web Developer</P>
                         <hr class="mb-8 opacity-90" />
-                        <p class="mb-8">
+                        <p class="mb-8 text-black">
                             Hello, I'm James Anthony C. Vecina, a recent graduate from the University of
                             Mindanao with a Bachelor of Science in Information Technology (BSIT). With a
                             strong passion for web development, I'm currently dedicated to honing my
@@ -29,7 +29,9 @@
                             tomorrow.
                         </p>
                     </div>
-                    <a href="#contact" class="btn btn-md bg-accent text-white"> Contact me </a>
+                    <a href="#contact"
+                        class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:text-light-tail-500 hover:bg-light-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Get
+                        started</a>
                 </div>
             </div>
         </div>
