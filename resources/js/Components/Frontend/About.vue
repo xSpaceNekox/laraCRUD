@@ -1,5 +1,5 @@
 <template>
-    <section id="about" class="section bg-light-secondary">
+    <section id="about" class="section bg-accent">
         <div class="container mx-auto" v-motion-slide-visible-top>
             <div class="flex flex-col xl:flex-row gap-24">
                 <img class="object-cover h-full w-[450px] md:mx-auto lg:mx-0 rounded-xl" src="/Image/About.jpg"
@@ -29,9 +29,9 @@
                             tomorrow.
                         </p>
                     </div>
-                    <a href="#contact"
-                        class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:text-light-tail-500 hover:bg-light-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Get
-                        started</a>
+                    <a href="#certificates"
+                        class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-light-tail-100 hover:text-light-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Certificates
+                    </a>
                 </div>
             </div>
         </div>

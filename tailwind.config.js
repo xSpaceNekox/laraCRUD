@@ -24,24 +24,21 @@ module.exports = {
         },
         extend: {
             colors: {
-                "light-primary": "#5f22d9",
-                "light-secondary": "#e4e4e4",
+                "light-primary": "#5f22d9", //purple heart
+                "light-secondary": "#51d6ca", //viking
                 "light-tail-100": "#A9DED2",
                 "light-tail-500": "#54BAB9",
-                "dark-primary": "#51d6ca",
-                "dark-secondary": "#1C1D24",
-                "dark-navy-100": "#07567D",
-                "dark-navy-500": "#292D42",
-
+                "light-black": "#010101", //black
                 accent: {
                     DEFAULT: "#e4e4e4",
-                    hover: "#925a2b",
+                    hover: "#ac73ff",
                 },
-                paragraph: "#878e99",
+                paragraph: "#010101",
                 blue: colors.blue,
                 indigo: colors.indigo,
                 green: colors.green,
-                red: colors.red,
+                red: "#c82b28", //persian Red
+                yellow: "#d7ad0d", //Galliano
             },
         },
     },

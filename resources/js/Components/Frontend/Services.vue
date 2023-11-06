@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-    <section id="services" class="section bg-light-secondary">
+    <section id="services" class="section bg-accent">
         <div class="container mx-auto" v-motion-slide-visible-top>
             <div class="flex flex-col items-center text-center">
                 <h2 class="section-title">What I can do to my future clients</h2>

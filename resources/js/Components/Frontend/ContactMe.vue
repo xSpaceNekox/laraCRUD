@@ -33,8 +33,8 @@ const submit = () => {
     <section id="contact" class="section bg-light-primary">
         <div class="container mx-auto" v-motion-slide-visible-top>
             <div class="flex flex-col items-center text-center">
-                <h2 class="section-title">Contact Me</h2>
-                <p class="subtitle">
+                <h2 class="section-title text-accent">Contact Me</h2>
+                <p class="subtitle text-accent">
                     Feel free to get in touch, whether it's about potential projects, inquiries, or
                     just to say hello.
                     <br />
@@ -53,9 +53,11 @@ const submit = () => {
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-body text-xl mb-1">Have a question?</h4>
-                            <p class="mb-1 text-paragraph">I am here to help you.</p>
-                            <p class="text-accent font-normal">Email me at jamesvecina63@gmail.com</p>
+                            <h4 class="text-accent font-body text-xl mb-1">Have a question?</h4>
+                            <p class="text-accent mb-1">I am here to help you.</p>
+                            <p class="text-light-secondary font-normal">
+                                Email me at jamesvecina63@gmail.com
+                            </p>
                         </div>
                     </div>
                     <div class="flex flex-col lg:flex-row gap-x-4">
@@ -70,36 +72,37 @@ const submit = () => {
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-body text-xl mb-1">Current Location</h4>
-                            <p class="mb-1 text-paragraph">Davao City, Philippines</p>
-                            <p class="text-accent font-normal">Serving clients worldwide.</p>
+                            <h4 class="text-accent font-body text-xl mb-1">Current Location</h4>
+                            <p class="text-accent mb-1">Davao City, Philippines</p>
+                            <p class="text-light-secondary font-normal">Serving clients worldwide.</p>
                         </div>
                     </div>
                 </div>
                 <form @submit.prevent="submit" class="space-y-8 w-full max-w-md">
-                    <div v-if="showMessage" class="m-2 p-4 bg-light-tail-500 text-light-secondary rounded-lg">
+                    <div v-if="showMessage" class="m-2 p-4 bg-light-tail-500 text-light-black rounded-lg">
                         Thank you for contacting me.
                     </div>
                     <div class="flex gap-8">
                         <div>
-                            <input v-model="form.name" type="text" class="input" placeholder="Your Name" />
-                            <span v-if="form.errors.name" class="text-sm m-2 text-red-400">{{
+                            <input v-model="form.name" type="text" class="input bg-accent" placeholder="Your Name" />
+                            <span v-if="form.errors.name" class="text-sm m-2 text-yellow">{{
                                 form.errors.name
                             }}</span>
                         </div>
                         <div>
-                            <input v-model="form.email" type="email" class="input" placeholder="Your Email" />
-                            <span v-if="form.errors.email" class="text-sm m-2 text-red-400">{{
+                            <input v-model="form.email" type="email" class="input bg-accent" placeholder="Your Email" />
+                            <span v-if="form.errors.email" class="text-sm m-2 text-yellow">{{
                                 form.errors.email
                             }}</span>
                         </div>
                     </div>
-                    <textarea v-model="form.body" class="textarea" placeholder="Your Message..."
+                    <textarea v-model="form.body" class="textarea bg-accent" placeholder="Your Message..."
                         spellcheck="false"></textarea>
-                    <span v-if="form.errors.body" class="text-sm m-2 text-red-400">{{
+                    <span v-if="form.errors.body" class="text-sm m-2 text-yellow">{{
                         form.errors.body
                     }}</span>
-                    <button class="btn btn-lg bg-accent hover:bg-secondary text-white">
+                    <button
+                        class="btn btn-lg rounded-md bg-accent px-3.5 py-2.5 text-sm font-semibold text-light-black shadow-sm hover:bg-light-tail-100 hover:text-light-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
                         Send message
                     </button>
                 </form>
