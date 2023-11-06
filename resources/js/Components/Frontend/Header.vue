@@ -29,8 +29,8 @@ onMounted(() => {
             <Link :href="route('login')">
             <a class="flex items-center">
                 <img src="/Image/Logo.png" class="h-12 max-w-x mr-4" alt="LOGO" />
-                <span class="bg-dark-primary:self-center text-xl font-semibold whitespace-nowrap"
-                    :class="{ 'text-accent': scrollBg, 'text-dark-secondary': !scrollBg }">James Portfolio</span>
+                <span class="self-center text-xl font-semibold whitespace-nowrap"
+                    :class="{ 'text-accent': scrollBg, 'text-light-dark': !scrollBg }">James Portfolio</span>
             </a>
             </Link>
             <button @click="showMobileMenu = !showMobileMenu" data-collapse-toggle="navbar-default" type="button"
@@ -46,7 +46,8 @@ onMounted(() => {
                 <ul
                     class="flex flex-col p-3 mt-4 rounded-lg border border-purple-200 md:flex-row md:space-x-8 md:mt-0 md:font-medium md:border-0 md:text-center text-dark-secondary">
                     <li v-for="(navigation, index) in navigations" :key="index">
-                        <a :href="navigation.href" class="block py-2 pl-3 pr-4 hover:text-dark-primary hover:font-extrabold"
+                        <a :href="navigation.href"
+                            class="block py-2 pl-3 pr-4 hover:text-light-tail-500 hover:font-extrabold"
                             :class="{ 'text-accent': scrollBg, 'text-dark-secondary': !scrollBg }"
                             aria-current="page">{{ navigation.name }}</a>
                     </li>

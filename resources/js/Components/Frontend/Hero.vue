@@ -28,9 +28,11 @@
                         and function. With a keen eye for detail and a creative mindset, I design and
                         develop web interfaces that captivate and engage users.
                     </p>
-                    <a href="#contact"
-                        class="rounded-md bg-accent px-3.5 py-2.5 text-sm font-semibold text-light-black shadow-sm hover:bg-light-tail-100 hover:text-light-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Contact
-                        Me</a>
+                    <div class="pt-2 pb-2">
+                        <a href="#contact"
+                            class="rounded-md bg-accent px-3.5 py-2.5 text-sm font-semibold text-light-black shadow-sm hover:bg-light-tail-100 hover:text-light-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Contact
+                            Me</a>
+                    </div>
                     <div class="pt-4">
                         <h5
                             class="text-lg text-accent flex justify-center lg:justify-start items-center text-color-black mb-2">
