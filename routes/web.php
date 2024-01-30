@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Foundation\Application;

@@ -29,11 +29,28 @@
                             tomorrow.
                         </p>
                     </div>
-                    <a href="#certificates"
-                        class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-light-tail-100 hover:text-light-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Certificates
-                    </a>
+                    <button @click="openOrDownloadResume"
+                        class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-light-tail-100 hover:text-light-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                        Resume
+                    </button>
+                    <!-- <a href="{{ route('show-resume') }}" target="_blank"
+                        class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-light-tail-100 hover:text-light-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                        Resume
+                    </a> -->
                 </div>
             </div>
         </div>
     </section>
 </template>
+
+<script>
+export default {
+    methods: {
+        openOrDownloadResume() {
+            // You can implement logic here to either show or download the PDF
+            // For simplicity, let's open it in a new tab
+            window.open("/Vecina_Resume.pdf", "_blank");
+        },
+    },
+};
+</script>
